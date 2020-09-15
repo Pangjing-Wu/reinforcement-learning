@@ -10,8 +10,8 @@ def reinforce(agent, env, gamma):
     log_probs = list()
     s = env.reset()
     while not env.final:
-        probs = agent(s)
-        m = Categorical(probs)
+        prob = agent(s)
+        m = Categorical(prob)
         a = m.sample()
         log_probs.append(m.log_prob(a))
         a = a.item()
