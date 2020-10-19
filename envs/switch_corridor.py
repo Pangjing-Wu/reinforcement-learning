@@ -5,6 +5,7 @@ class SwitchCorridor(BasicEnv):
 
     def __init__(self):
         super().__init__()
+        self._final = True
 
     @property
     def action_space(self):
