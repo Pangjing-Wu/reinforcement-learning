@@ -6,6 +6,7 @@ from torch.distributions import Categorical
 
 
 def reinforce(agent, env, gamma):
+    optimizer = optim.SGD(agent.parameters(), lr=.01)
     r_list    = list()
     log_probs = list()
     s = env.reset()

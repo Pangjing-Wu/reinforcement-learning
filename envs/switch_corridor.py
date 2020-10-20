@@ -13,10 +13,10 @@ class SwitchCorridor(BasicEnv):
 
     @property
     def observation_space(self):
-        return [0]
+        return [[1, 0], [0, 1]]
 
     def reset(self):
-        s0 = [0]
+        s0 = [[1, 0], [0, 1]]
         self._final   = False
         self._state  = [1, 0, 0, 0]
         self._reward = 0
@@ -41,7 +41,7 @@ class SwitchCorridor(BasicEnv):
             raise KeyError('unknown state.')
         if self._state == [0, 0, 0, 1]:
             self._final = True
-        s = [0]
+        s = [[1, 0], [0, 1]]
         reward = 0 if self._final else -1
         return (s, reward)
     
